@@ -2,7 +2,6 @@
   background: $bgColorHeader;
   padding: 30px 15px;
 
-
   &__wrapper {
     display: grid;
     grid-template-areas: "logo button burger";
@@ -219,8 +218,6 @@
   }
 }
 
-//
-
 @media (min-width: 993px) {
   .top-menu {
     background: initial;
@@ -229,7 +226,6 @@
     &__wrapper {
       grid-template-areas: "logo menu button";
       grid-template-columns: min-content 1fr min-content;
-      //grid-template-columns: repeat(3, 1fr);
       grid-template-rows: max-content;
     }
 

@@ -57,12 +57,9 @@
       @include Lato;
       font-size: 24px;
       line-height: 24px;
-      color: $purple;
     }
 
     &__text {
-      line-height: 16px;
-      color: #848E97;
       padding: 14px 0 465px;
     }
 
@@ -70,6 +67,31 @@
       font-size: 21px;
       line-height: 23px;
       padding: 23px 61px;
+    }
+  }
+}
+
+@media (min-width: 993px) {
+  .hero {
+    &__title {
+      padding: 110px 0 19px;
+      font-size: 82px;
+      line-height: 82px;
+    }
+
+    &__subtitle {
+      font-size: 30px;
+      line-height: 30px;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 16px;
+      padding: 19px 0 459px;
+    }
+
+    &__button {
+      line-height: 23px;
     }
   }
 }
