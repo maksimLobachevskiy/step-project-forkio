@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include Montserrat;
+  font-weight: bold;
+}
+
+.container {
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
