@@ -1,0 +1,20 @@
+.header {
+  background-image: url(../img/bg/fork_320.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+@media (min-width: 481px) {
+  .header {
+    background-image: url(../img/bg/fork_768.jpg);
+  }
+}
+
+@media (min-width: 993px) {
+  .header {
+    background-image: url(../img/bg/fork_1200.jpg);
+    max-width: 1200px;
+  }
+}

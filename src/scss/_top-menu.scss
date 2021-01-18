@@ -1,0 +1,251 @@
+.top-menu {
+  background: $bgColorHeader;
+  padding: 30px 15px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-areas: "logo button burger";
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    grid-area: logo;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 150ms linear;
+
+    &__icon {
+      display: block;
+      width: 43px;
+      height: 41px;
+      background-image: url(../img/logo/Logo.png);
+    }
+
+    &__text {
+      display: none;
+      margin-left: 17px;
+      @include Lato;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: $purple;
+    }
+
+    &:hover .logo__text {
+      color: #fff;
+    }
+
+    &:hover .logo__icon {
+      background-image: url(../img/logo/logo_hover.png);
+    }
+  }
+
+  &__button {
+    grid-area: button;
+    width: max-content;
+    justify-self: center;
+    transition: all 150ms linear;
+
+    &:hover {
+      @include hoverButton;
+    }
+  }
+
+  &__menu {
+    grid-area: menu;
+    position: absolute;
+    top: 101px;
+    left: 0;
+    display: none;
+  }
+
+  .nav-menu {
+    width: 100%;
+    padding: 0 15px;
+    z-index: 1;
+
+    &__items {
+      padding: 19px 0;
+      background: #333333;
+      border-bottom: 3px solid #3b3b3b;
+    }
+
+    &__link {
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 26px;
+      padding: 4px 0 4px 29px;
+      line-height: 53px;
+      color: #ffffff;
+      border-left: 8px solid #333333;
+      transition: color 150ms linear, border-left 150ms linear;
+
+      &:hover {
+        color: $purple;
+        border-left: 8px solid $purple;
+      }
+    }
+  }
+
+  .show {
+    display: block;
+  }
+
+  &__burger {
+    grid-area: burger;
+    justify-self: end;
+    width: 26px;
+    height: 25px;
+    cursor: pointer;
+    position: relative;
+
+    span {
+      position: absolute;
+      top: 50%;
+      margin-top: -2px;
+      right: 50%;
+      margin-right: -13px;
+      width: 26px;
+      height: 4px;
+      background-color: #ffffff;
+      border-radius: 2px;
+
+      &::before,
+      &::after {
+        content: "";
+        @extend span;
+        transition: 0.2s;
+      }
+
+      &::before {
+        width: 15px;
+        transform: translateY(-10px);
+      }
+
+      &::after {
+        transform: translateY(10px);
+      }
+    }
+  }
+
+  .active {
+    span {
+      margin-top: 0;
+      height: 0;
+
+      &::before {
+        width: 26px;
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+@media (min-width: 481px) {
+  .top-menu {
+    padding: 22px 10px 0;
+
+    &__wrapper {
+      grid-template-areas: "logo button" "menu menu";
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: max-content max-content;
+    }
+
+    .logo {
+      &__text {
+        display: block;
+      }
+    }
+
+    &__button {
+      padding: 11px 40px;
+      justify-self: end;
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    &__burger {
+      display: none;
+    }
+
+    &__menu {
+      position: static;
+      display: block;
+    }
+
+    .nav-menu {
+      width: inherit;
+      padding: 30px 0 18px;
+
+      &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 500px;
+      }
+
+      &__items {
+        padding: 0;
+        background: none;
+        border-bottom: none;
+      }
+
+      &__link {
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18px;
+        color: $purple;
+        border-left: none;
+        padding: 0;
+        transition: color 150ms linear, border-left 150ms linear;
+
+        &:hover {
+          color: #ffffff;
+          border-left: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 993px) {
+  .top-menu {
+    background: initial;
+    padding: 30px 80px 0;
+
+    &__wrapper {
+      grid-template-areas: "logo menu button";
+      grid-template-columns: min-content 1fr min-content;
+      grid-template-rows: max-content;
+    }
+
+    &__menu {
+      align-self: center;
+      justify-self: end;
+    }
+
+    .nav-menu {
+      padding: 0;
+
+      &__list {
+        max-width: initial;
+      }
+
+      &__link {
+        line-height: 15px;
+        margin-right: 48px;
+
+      }
+    }
+  }
+}

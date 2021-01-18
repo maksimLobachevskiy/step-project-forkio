@@ -1,0 +1,97 @@
+.hero {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: capitalize;
+
+  &__title {
+    padding: 50px 0 19px;
+    font-size: 48px;
+    line-height: 48px;
+    color: #FFFFFF;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: $purple;
+  }
+
+  &__text {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #848E97;
+    padding: 14px 0 416px;
+  }
+
+  &__button {
+    font-size: 18px;
+    line-height: 20px;
+    transform: translateY(50%);
+    margin: 0 auto;
+    transition: color 150ms linear, background 150ms linear;
+
+    &:hover {
+      @include hoverButton;
+      border: 1px solid $purple;
+    }
+  }
+}
+
+
+@media (min-width: 481px) {
+  .hero {
+    &__title {
+      padding: 70px 0 19px;
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    &__subtitle {
+      @include Lato;
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    &__text {
+      padding: 14px 0 465px;
+    }
+
+    &__button {
+      font-size: 21px;
+      line-height: 23px;
+      padding: 23px 61px;
+    }
+  }
+}
+
+@media (min-width: 993px) {
+  .hero {
+    &__title {
+      padding: 110px 0 19px;
+      font-size: 82px;
+      line-height: 82px;
+    }
+
+    &__subtitle {
+      font-size: 30px;
+      line-height: 30px;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 16px;
+      padding: 19px 0 459px;
+    }
+
+    &__button {
+      line-height: 23px;
+    }
+  }
+}
