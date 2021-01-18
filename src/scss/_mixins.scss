@@ -5,3 +5,8 @@
 @mixin Lato {
   font-family: "Lato", sans-serif;
 }
+
+@mixin hoverButton {
+    color: $purple;
+    background: #ffffff;
+  }

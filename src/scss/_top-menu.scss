@@ -1,10 +1,9 @@
 .top-menu {
   background: $bgColorHeader;
+  padding: 30px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 15px;
-  margin: 0 -10px;
 
   .logo {
     text-decoration: none;
@@ -43,14 +42,12 @@
     transition: all 150ms linear;
 
     &:hover {
-      color: $purple;
-      background: #ffffff;
+      @include hoverButton;
     }
   }
 
   &__menu {
     position: absolute;
-    //display: block;
     top: 101px;
     left: 0;
     display: none;

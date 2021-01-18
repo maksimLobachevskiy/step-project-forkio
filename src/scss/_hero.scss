@@ -1,0 +1,46 @@
+.hero {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: capitalize;
+
+  &__title {
+    padding: 50px 0 19px;
+    font-size: 48px;
+    line-height: 48px;
+    color: #FFFFFF;
+  }
+
+  &__subtitle {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    color: $purple;
+  }
+
+  &__text {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #848E97;
+    padding: 14px 0 416px;
+  }
+
+  &__button {
+    font-size: 18px;
+    line-height: 20px;
+    transform: translateY(50%);
+    margin: 0 auto;
+    transition: color 150ms linear, background 150ms linear;
+
+    &:hover {
+      @include hoverButton;
+      border: 1px solid $purple;
+    }
+  }
+}
