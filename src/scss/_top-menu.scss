@@ -1,11 +1,14 @@
 .top-menu {
   background: $bgColorHeader;
   padding: 30px 15px;
-  display: flex;
+  display: grid;
+  grid-template-areas: "logo button burger";
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
   align-items: center;
 
   .logo {
+    grid-area: logo;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -39,6 +42,9 @@
   }
 
   &__button {
+    grid-area: button;
+    width: max-content;
+    justify-self: center;
     transition: all 150ms linear;
 
     &:hover {
@@ -86,6 +92,8 @@
   }
 
   &__burger {
+    grid-area: burger;
+    justify-self: end;
     width: 26px;
     height: 25px;
     cursor: pointer;
