@@ -1,0 +1,141 @@
+.top-menu {
+  background: $bgColorHeader;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 15px;
+  margin: 0 -10px;
+
+  .logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 150ms linear;
+
+    &__icon {
+      display: block;
+      width: 43px;
+      height: 41px;
+      background-image: url(../img/logo/Logo.png);
+    }
+
+    &__text {
+      display: none;
+      margin-left: 17px;
+      @include Lato;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: $purple;
+    }
+
+    &:hover .logo__text {
+      color: #fff;
+    }
+
+    &:hover .logo__icon {
+      background-image: url(../img/logo/logo_hover.png);
+    }
+  }
+
+  &__button {
+    transition: all 150ms linear;
+
+    &:hover {
+      color: $purple;
+      background: #ffffff;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    //display: block;
+    top: 101px;
+    left: 0;
+    display: none;
+  }
+
+  .nav-menu {
+    width: 100%;
+    padding: 0 15px;
+    z-index: 1;
+
+    &__items {
+      padding: 19px 0;
+      background: #333333;
+      border-bottom: 3px solid #3b3b3b;
+    }
+
+    &__link {
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 26px;
+      padding: 4px 0 4px 29px;
+      line-height: 53px;
+      color: #ffffff;
+      border-left: 8px solid #333333;
+      transition: color 150ms linear, border-left 150ms linear;
+
+      &:hover {
+        color: $purple;
+        border-left: 8px solid $purple;
+      }
+    }
+  }
+
+  .show {
+    display: block;
+  }
+
+  &__burger {
+    width: 26px;
+    height: 25px;
+    cursor: pointer;
+    position: relative;
+
+    span {
+      position: absolute;
+      top: 50%;
+      margin-top: -2px;
+      right: 50%;
+      margin-right: -13px;
+      width: 26px;
+      height: 4px;
+      background-color: #ffffff;
+      border-radius: 2px;
+
+      &::before,
+      &::after {
+        content: "";
+        @extend span;
+        transition: 0.2s;
+      }
+
+      &::before {
+        width: 15px;
+        transform: translateY(-10px);
+      }
+
+      &::after {
+        transform: translateY(10px);
+      }
+    }
+  }
+
+  .active {
+    span {
+      margin-top: 0;
+      height: 0;
+
+      &::before {
+        width: 26px;
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
