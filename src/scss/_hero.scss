@@ -14,10 +14,9 @@
   }
 
   &__subtitle {
-    font-weight: normal;
+    font-weight: 400;
     font-size: 18px;
     line-height: 26px;
-    text-align: center;
     color: $purple;
   }
 
@@ -41,6 +40,36 @@
     &:hover {
       @include hoverButton;
       border: 1px solid $purple;
+    }
+  }
+}
+
+
+@media (min-width: 481px) {
+  .hero {
+    &__title {
+      padding: 70px 0 19px;
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    &__subtitle {
+      @include Lato;
+      font-size: 24px;
+      line-height: 24px;
+      color: $purple;
+    }
+
+    &__text {
+      line-height: 16px;
+      color: #848E97;
+      padding: 14px 0 465px;
+    }
+
+    &__button {
+      font-size: 21px;
+      line-height: 23px;
+      padding: 23px 61px;
     }
   }
 }

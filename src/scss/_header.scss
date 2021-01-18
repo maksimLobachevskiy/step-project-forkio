@@ -1,7 +1,12 @@
 .header {
-  width: 100vw;
   background-image: url(../img/bg/fork_320.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+
+@media (min-width: 481px) {
+  .header {
+    background-image: url(../img/bg/fork_768.jpg);
+  }
 }

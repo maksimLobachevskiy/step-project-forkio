@@ -1,11 +1,15 @@
 .top-menu {
   background: $bgColorHeader;
   padding: 30px 15px;
-  display: grid;
-  grid-template-areas: "logo button burger";
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: space-between;
-  align-items: center;
+
+
+  &__wrapper {
+    display: grid;
+    grid-template-areas: "logo button burger";
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .logo {
     grid-area: logo;
@@ -53,6 +57,7 @@
   }
 
   &__menu {
+    grid-area: menu;
     position: absolute;
     top: 101px;
     left: 0;
@@ -140,6 +145,75 @@
 
       &::after {
         transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+@media (min-width: 481px) {
+  .top-menu {
+    padding: 22px 10px 0;
+
+    &__wrapper {
+      grid-template-areas: "logo button" "menu menu";
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: max-content max-content;
+    }
+
+    .logo {
+      &__text {
+        display: block;
+      }
+    }
+
+    &__button {
+      padding: 11px 40px;
+      justify-self: end;
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    &__burger {
+      display: none;
+    }
+
+    &__menu {
+      position: static;
+      display: block;
+    }
+
+    .nav-menu {
+      width: inherit;
+      padding: 30px 0 18px;
+
+      &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 510px;
+      }
+
+      &__items {
+        padding: 0;
+        background: none;
+        border-bottom: none;
+      }
+
+      &__link {
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18px;
+        color: $purple;
+        border-left: none;
+        padding: 0;
+        transition: color 150ms linear, border-left 150ms linear;
+
+        &:hover {
+          color: #ffffff;
+          border-left: none;
+        }
       }
     }
   }
