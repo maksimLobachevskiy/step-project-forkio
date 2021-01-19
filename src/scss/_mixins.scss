@@ -10,3 +10,38 @@
     color: $purple;
     background: #ffffff;
   }
+
+
+/*FLEX*/
+@mixin flex($display, $wrap, $justify, $align) {
+  display: $display;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+/*MEDIA QUERIES*/
+@mixin small {
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+@mixin small-landscape {
+  @media (min-width: #{$screen-sland}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
