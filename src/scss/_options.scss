@@ -1,0 +1,143 @@
+.options {
+  position: relative;
+  @include medium {
+    background-color: $lightGrey;
+    padding-top: 100px;
+    padding-bottom: 33px;
+  }
+
+  &__title {
+    grid-area: title;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    color: $purple;
+    text-align: center;
+    @include small {
+      font-size: 42px;
+      line-height: 44px;
+    }
+    @include medium {
+      font-size: 48px;
+      line-height: 50px;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-areas:
+    "title"
+    "list";
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+
+    @include medium {
+      grid-template-areas:
+    "list title"
+    "list image"
+    "list image"
+    "list image";
+      grid-template-rows: 50px 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 40px;
+    }
+
+  }
+
+  &__list {
+    grid-area: list;
+    padding: 36px 0 21px 0;
+
+    margin-bottom: 381px;
+    @include small {
+      margin-bottom: 519px;
+    }
+    @include medium {
+      padding: 0;
+      margin-bottom: 0;
+    }
+
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @include small {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+    @include medium {
+      position: relative;
+      grid-area: image;
+      padding-top: 20px;
+    }
+    @include x-large {
+      position: relative;
+    }
+  }
+
+  &__item {
+    padding-bottom: 37px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include small {
+      display: grid;
+      padding-bottom: 33px;
+      grid-template-columns: 135px 1fr;
+    }
+    @include medium {
+      padding-bottom: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  &__img {
+    @include small {
+      width: 250px;
+    }
+  }
+}
+
+.text-options {
+  text-align: center;
+  @include small {
+    text-align: left;
+  }
+
+  &__title {
+    font-size: 16px;
+    color: $darkGrey;
+    padding: 27px 0 14px 0;
+    @include medium {
+
+      padding-bottom: 17px;
+    }
+  }
+
+  &__content {
+    font-size: 14px;
+    color: #848E97;
+    line-height: 21px;
+
+  }
+}
+
+.img-mob {
+  width: 100%;
+  height: auto;
+  @include small {
+    display: none;
+  }
+}
+
+.img-lg {
+  display: none;
+  @include small {
+    display: block;
+    width: 100%;
+
+  }
+}

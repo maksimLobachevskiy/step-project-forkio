@@ -85,7 +85,7 @@
   }
   >li:last-child, >li:nth-child(2) {
     margin-right: 0;
-    @include small-landscape {
+    @include small {
       margin-right: 10px;
     }
   }

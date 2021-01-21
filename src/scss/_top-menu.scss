@@ -221,7 +221,7 @@
 @media (min-width: 993px) {
   .top-menu {
     background: initial;
-    padding: 30px 80px 0;
+    //padding: 30px 80px 0;
 
     &__wrapper {
       grid-template-areas: "logo menu button";
@@ -239,12 +239,15 @@
 
       &__list {
         max-width: initial;
+        justify-content: flex-end;
+        &:last-child {
+          padding-right: 48px;
+        }
       }
 
       &__link {
         line-height: 15px;
-        margin-right: 48px;
-
+        padding: 0 23px;
       }
     }
   }
