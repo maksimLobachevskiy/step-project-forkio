@@ -4,29 +4,23 @@
 
 body {
   @include Montserrat;
-  font-weight: bold;
+
 }
 
 .container {
-  max-width: 320px;
+  max-width: 480px;
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
 
   @include small {
-    width: initial;
-    max-width: 768px;
-    padding: 0 40px;
+    max-width: 992px;
+    padding: 0 30px;
   }
-
   @include medium {
     max-width: 1200px;
-    padding: 0 40px;
+    padding: 0;
   }
 
-  @include large {
-    max-width: 1200px;
-    padding: 0 90px;
-  }
 }
 

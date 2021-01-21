@@ -28,12 +28,6 @@
   }
 }
 
-@mixin small-landscape {
-  @media (min-width: #{$screen-sland}) {
-    @content;
-  }
-}
-
 @mixin medium {
   @media (min-width: #{$screen-md}) {
     @content;
@@ -42,6 +36,12 @@
 
 @mixin large {
   @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin x-large {
+  @media (min-width: #{$screen-xlg}) {
     @content;
   }
 }
