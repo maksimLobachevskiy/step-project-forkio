@@ -15,8 +15,10 @@
 }
 
 .title {
+  @include Montserrat;
   font-size: 48px;
   line-height: 48px;
   color: $white;
   font-weight: $bold;
+
 }

@@ -47,7 +47,9 @@ const styles = () =>
         overrideBrowserslist: ["last 3 versions"],
       })
     )
-    .pipe(cleanCSS({ compatibility: "ie8" }))
+    .pipe(cleanCSS({
+        compatibility: "ie8",
+    }))
     .pipe(
       rename({
         suffix: ".min",
