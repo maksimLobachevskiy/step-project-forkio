@@ -2,13 +2,12 @@
   "name": "step-project-forkio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "gulp build && gulp dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp build && gulp dev"
   },
   "author": "Vadym Babik &",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.26.13",
     "del": "^6.0.0",
