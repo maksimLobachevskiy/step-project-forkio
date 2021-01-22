@@ -1,6 +1,12 @@
-.top-menu {
+.header-bar {
   background: $bgColorHeader;
   padding: 30px 15px;
+  @include small {
+    padding: 22px 10px 0;
+  }
+  @include medium {
+    background: initial;
+  }
 
   &__wrapper {
     display: grid;
@@ -8,6 +14,16 @@
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     align-items: center;
+    @include small {
+      grid-template-areas: "logo button" "menu menu";
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: max-content max-content;
+    }
+    @include medium {
+      grid-template-areas: "logo menu button";
+      grid-template-columns: min-content 1fr min-content;
+      grid-template-rows: max-content;
+    }
   }
 
   .logo {
@@ -33,10 +49,13 @@
       line-height: 16px;
       text-transform: uppercase;
       color: $purple;
+      @include small {
+        display: block;
+      }
     }
 
     &:hover .logo__text {
-      color: #fff;
+      color: $white;
     }
 
     &:hover .logo__icon {
@@ -50,8 +69,11 @@
     justify-self: center;
     transition: all 150ms linear;
 
-    &:hover {
-      @include hoverButton;
+    @include small {
+      padding: 11px 40px;
+      justify-self: end;
+      font-size: 16px;
+      line-height: 16px;
     }
   }
 
@@ -61,17 +83,54 @@
     top: 101px;
     left: 0;
     display: none;
+    @include small {
+      position: static;
+      display: block;
+    }
+    @include medium {
+      align-self: center;
+      justify-self: end;
+    }
   }
 
-  .nav-menu {
+  .header-menu {
     width: 100%;
     padding: 0 15px;
     z-index: 1;
+    @include small {
+      width: inherit;
+      padding: 30px 0 18px;
+    }
+    @include medium {
+      padding: 0;
+    }
+
+    &__list {
+      @include small {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 500px;
+      }
+      @include medium {
+        max-width: initial;
+        justify-content: flex-end;
+        &:last-child {
+          padding-right: 48px;
+        }
+      }
+    }
 
     &__items {
       padding: 19px 0;
-      background: #333333;
-      border-bottom: 3px solid #3b3b3b;
+      background: $bgMobMenu;
+      border-bottom: 3px solid $borderBottomMobMenu;
+      @include small {
+        padding: 0;
+        background: none;
+        border-bottom: none;
+      }
     }
 
     &__link {
@@ -80,13 +139,31 @@
       font-size: 26px;
       padding: 4px 0 4px 29px;
       line-height: 53px;
-      color: #ffffff;
-      border-left: 8px solid #333333;
+      color: $white;
+      border-left: 8px solid $bgMobMenu;
       transition: color 150ms linear, border-left 150ms linear;
+      @include small {
+        text-decoration: none;
+        font-weight: $bold;
+        font-size: 16px;
+        line-height: 18px;
+        color: $purple;
+        border-left: none;
+        padding: 0;
+        transition: color 150ms linear, border-left 150ms linear;
+      }
+      @include medium {
+        line-height: 15px;
+        padding: 0 23px;
+      }
 
       &:hover {
         color: $purple;
         border-left: 8px solid $purple;
+        @include small {
+          color: $white;
+          border-left: none;
+        }
       }
     }
   }
@@ -102,6 +179,10 @@
     height: 25px;
     cursor: pointer;
     position: relative;
+    display: block;
+    @include small {
+      display: none;
+    }
 
     span {
       position: absolute;
@@ -111,7 +192,7 @@
       margin-right: -13px;
       width: 26px;
       height: 4px;
-      background-color: #ffffff;
+      background-color: $white;
       border-radius: 2px;
 
       &::before,
@@ -144,110 +225,6 @@
 
       &::after {
         transform: rotate(45deg);
-      }
-    }
-  }
-}
-
-@media (min-width: 481px) {
-  .top-menu {
-    padding: 22px 10px 0;
-
-    &__wrapper {
-      grid-template-areas: "logo button" "menu menu";
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: max-content max-content;
-    }
-
-    .logo {
-      &__text {
-        display: block;
-      }
-    }
-
-    &__button {
-      padding: 11px 40px;
-      justify-self: end;
-      font-size: 16px;
-      line-height: 16px;
-    }
-
-    &__burger {
-      display: none;
-    }
-
-    &__menu {
-      position: static;
-      display: block;
-    }
-
-    .nav-menu {
-      width: inherit;
-      padding: 30px 0 18px;
-
-      &__list {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 auto;
-        max-width: 500px;
-      }
-
-      &__items {
-        padding: 0;
-        background: none;
-        border-bottom: none;
-      }
-
-      &__link {
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 18px;
-        color: $purple;
-        border-left: none;
-        padding: 0;
-        transition: color 150ms linear, border-left 150ms linear;
-
-        &:hover {
-          color: #ffffff;
-          border-left: none;
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 993px) {
-  .top-menu {
-    background: initial;
-    //padding: 30px 80px 0;
-
-    &__wrapper {
-      grid-template-areas: "logo menu button";
-      grid-template-columns: min-content 1fr min-content;
-      grid-template-rows: max-content;
-    }
-
-    &__menu {
-      align-self: center;
-      justify-self: end;
-    }
-
-    .nav-menu {
-      padding: 0;
-
-      &__list {
-        max-width: initial;
-        justify-content: flex-end;
-        &:last-child {
-          padding-right: 48px;
-        }
-      }
-
-      &__link {
-        line-height: 15px;
-        padding: 0 23px;
       }
     }
   }
