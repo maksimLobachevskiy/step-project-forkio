@@ -1,8 +1,8 @@
 "use strict";
-
-document.body.addEventListener("click", (e) => {
+const burger = document.querySelector(".header-bar__burger");
+burger.addEventListener("click", (e) => {
+  e.preventDefault();
   const target = e.target;
-  const burger = document.querySelector(".header-bar__burger");
   const menu = document.querySelector(".header-bar__menu");
 
   if (target.classList.contains("header-bar__burger")) {
