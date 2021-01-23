@@ -11,6 +11,9 @@
   background: $white;
 }
 
+@mixin uppercase {
+  text-transform: uppercase;
+}
 /*FLEX*/
 @mixin flex($display, $wrap, $justify, $align) {
   display: $display;
@@ -18,6 +21,7 @@
   justify-content: $justify;
   align-items: $align;
 }
+
 
 /*MEDIA QUERIES*/
 @mixin small {

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "gulp build && gulp dev"
   },
-  "author": "Vadym Babik &",
+  "author": "Vadym Babik & Maksim Lobachevskiy",
   "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.26.13",
