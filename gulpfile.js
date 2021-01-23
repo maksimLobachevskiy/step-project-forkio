@@ -33,6 +33,7 @@ const gulp = require("gulp"),
   rename = require("gulp-rename"),
   uglify = require("gulp-uglify-es").default,
   concat = require("gulp-concat"),
+  gcmq = require("gulp-group-css-media-queries"),
   sass = require("gulp-sass");
 
 //clear dist folder
@@ -42,14 +43,17 @@ const clear = () => del(distFolder);
 const styles = () =>
   src(path.src.scss)
     .pipe(sass().on("error", sass.logError))
+    .pipe(gcmq())
     .pipe(
       autoprefixer({
         overrideBrowserslist: ["last 3 versions"],
       })
     )
-    .pipe(cleanCSS({
+    .pipe(
+      cleanCSS({
         compatibility: "ie8",
-    }))
+      })
+    )
     .pipe(
       rename({
         suffix: ".min",
