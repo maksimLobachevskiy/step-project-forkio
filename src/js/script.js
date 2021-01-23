@@ -1,18 +1,20 @@
 "use strict";
 const burger = document.querySelector(".header-bar__burger");
-burger.addEventListener("click", (e) => {
-  e.preventDefault();
-  const target = e.target;
-  const menu = document.querySelector(".header-bar__menu");
-
-  if (target.classList.contains("header-bar__burger")) {
-    burger.classList.toggle("active");
-    menu.classList.toggle("show");
-  } else if (
-    !target.classList.contains("header-bar__burger") &&
-    !target.classList.contains("header-bar__menu")
-  ) {
-    burger.classList.toggle("active");
-    menu.classList.toggle("show");
-  }
+const menu = document.querySelector(".header-bar__menu");
+burger.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (!menu.classList.contains("show")) {
+        burger.classList.add("active");
+        menu.classList.add("show");
+    } else {
+        burger.classList.remove("active");
+        menu.classList.remove("show");
+    }
+});
+document.body.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (!menu.contains(e.target) && !burger.contains(e.target)) {
+        burger.classList.remove("active");
+        menu.classList.remove("show");
+    }
 });
