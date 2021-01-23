@@ -1,7 +1,14 @@
 .social {
-  padding-top: 112px;
+  padding-top: 66px;
   padding-bottom: 88px;
-
+  @include small {
+    padding-top: 88px;
+    padding-bottom: 98px;
+  }
+  @include medium {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
   &__title {
     font-size: 26px;
     line-height: 28px;
