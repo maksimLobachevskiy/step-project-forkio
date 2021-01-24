@@ -1,4 +1,6 @@
 .header {
+  min-width: 320px;
+
   &__wrapper {
     background-image: url(../img/bg/fork_320.jpg);
     @include small {

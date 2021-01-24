@@ -24,12 +24,11 @@
   }
 
   &__list {
-    margin: 53px 25px 37px;
+    padding: 53px 10px 37px;
     @include small {
-      margin: 53px 0 37px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      column-gap: 63px;
+      column-gap: 47px;
     }
     @include medium {
       grid-template-columns: repeat(3, 1fr);
