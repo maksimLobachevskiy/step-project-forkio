@@ -47,3 +47,9 @@
     @content;
   }
 }
+
+@mixin xs {
+  @media (max-width: #{$screen-xs}) {
+    @content;
+  }
+}
