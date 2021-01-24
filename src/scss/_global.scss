@@ -8,17 +8,16 @@ body {
 
 .container {
   max-width: 480px;
+  min-width: 320px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 10px;
 
   @include small {
     max-width: 992px;
-    padding: 0 30px;
   }
   @include medium {
     max-width: 1200px;
-    padding: 0;
   }
 
 }
