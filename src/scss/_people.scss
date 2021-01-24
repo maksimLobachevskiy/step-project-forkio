@@ -27,11 +27,11 @@
     padding: 53px 10px 37px;
     @include small {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 47px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 30px;
     }
     @include medium {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       column-gap: 90px;
     }
   }
