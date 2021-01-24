@@ -2,13 +2,16 @@
   box-sizing: border-box;
 }
 
+html {
+  min-width: 320px;
+}
+
 body {
   @include Montserrat;
 }
 
 .container {
   max-width: 480px;
-  min-width: 320px;
   width: 100%;
   margin: 0 auto;
   padding: 0 10px;
